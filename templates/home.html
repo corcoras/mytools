@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>hello from home.html</h2>
+{{ name }} has {{ number }}
+
+<ul>
+{% for i in list %}
+    <li>{{i}}</li>
+{% endfor %}
+</ul>
+
+<form  method='POST' >{% csrf_token %}
+  
+    <textarea name='title' placeholder='your title' rows="10" cols="30">paste cdp detail here</textarea>
+    <textarea name='result' placeholder='result_cdp' rows="60" cols="100">{{ cdp }}</textarea>
+  
+    <input type='submit' value='Save' />
+</form>
+
+
+
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<container>
+    <h2>Interface Description Update</h2>
+    <form class="form-inline" action='.' method='POST'>{% csrf_token %}
+        <div class="form-group mb-2  mt-1 ml-1 mr-1">
+            <input type='text' class="form-control form-control-sm" name='cmf' placeholder='29012901' value={{cmf}} />
+            <input type='text' class="form-control form-control-sm" name='client_name' placeholder='Sullivan Pontiac' value={{client_name}}/>
+            <input type='text' class="form-control form-control-sm" name='device_name' placeholder='cisco 3560' value={{device_name}} />
+            <input type='text' class="form-control form-control-sm" name='device_ip' placeholder='204.125.25.1' value={{device_ip}}/>
+        </div>
+        <div class="form-group mb-2">
+            <br>
+            <textarea class="form-control form-control-sm" name="cdp_scrape" placeholder='paste cdp detail info' rows="20" cols="41">{{ cdp_scrape }}</textarea>
+            <input class="btn btn-primary btn-sm mb-2" type='submit' value='>>>' />
+            <textarea class="form-control form-control-sm" name="result" placeholder='interface description results' rows="20" cols="80">{{ result }}</textarea><br>
+        </div>
+    </form>
+</container>
+
+
+{% endblock  %}
